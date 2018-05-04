@@ -30,17 +30,19 @@ class Solution290: SolutionDelegate {
         var set = Set<String>()
         
         for (index, char) in pattern.enumerated() {
-            // 如果之前没有出现过
+            // 如果之前出现过
             if let c = dict[char] {
+                // 是不是相等的
                 if c.elementsEqual(splitStr[index]) {
                     continue
                 } else {
                     return false
                 }
             } else if set.index(of: splitStr[index]) != nil {
-                
+                // 没出现过也要看是不是对应关系是否是一对一的，不是也返回
                 return false
             } else {
+                //没出现过的直接添加 dict 和 set 中
                 dict[char] = splitStr[index]
                 set.insert(splitStr[index])
             }
