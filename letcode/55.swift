@@ -64,10 +64,6 @@ class Solution55: SolutionDelegate {
             if maxIndex != -1 {
                 index = maxIndex
                 print("index = \(index), value = \(nums[index])")
-//                if index + nums[index] >= nums.count - 1 {
-//                    flag = true
-//                    break
-//                }
             } else {
                 break
             }
