@@ -6,8 +6,7 @@ class Solution(object):
 
     def __init__(self):
         self.values = []
-        self.p_path = []
-        self.q_path = []
+        self.path = []
         self.ancestor = None
 
     def lowestCommonAncestor(self, root, p, q):
@@ -17,59 +16,6 @@ class Solution(object):
         :type q: TreeNode
         :rtype: TreeNode
         """
-
-        # if root == None or self.ancestor != None:
-        #     print("return root val == %d or self.ancestor = %r" % (root.val, self.ancestor))
-        #     return None
-
-        # # if len(self.values) <= 0:
-        # #     self.values.append(root.val)
-
-        # # if root.val == p and (q != p or len(self.p_path) ==  0):
-        # #     self.p_path = list(self.values)
-        # #     print("find p = %d", p)
-        # # elif root.val == q:
-        # #     self.q_path = list(self.values)
-        # #     print("find q = %d", q)
-
-        # # if len(self.p_path) > 0 and len(self.q_path) > 0:
-        # #     print("self.q_path = %r" % self.q_path)
-        # #     print("self.p_path = %r" % self.p_path)
-        # #     if len(self.p_path) == len(self.q_path):
-        # #         self.p_path.pop()
-        # #         self.q_path.pop()
-
-        # #     while len(self.q_path) > 0:
-        # #         n = self.q_path.pop()
-        # #         try:
-        # #             index = self.p_path.index(n)
-        # #             self.ancestor = n
-        # #             print("---- find %d at index = %d", n, index)
-        # #             return self.ancestor
-        # #         except ValueError:
-        # #             print("---- not find %d ", n)
-        # #             continue
-
-        #     # print("return None")
-        #     # return None
-
-        # if root.left != None:
-        #     print('left = %d', root.left.val)
-        #     self.values.append(root.left.val)
-        #     self.lowestCommonAncestor(root.left, p, q)
-        # else :
-        #     print('left = none')
-
-        # if root.right != None:
-        #     print('right = %d', root.right.val)
-        #     self.values.append(root.right.val)
-        #     self.lowestCommonAncestor(root.right, p, q)
-        # else :
-        #     print('right = none')
-
-        # # self.values.pop()
-        
-        # return self.ancestor
         parents = {}
         stack = [root]
         while stack:
@@ -82,7 +28,7 @@ class Solution(object):
                 stack.append(node.right)
         node1, node2 = p, q
         while node1 != node2:
-            print(node1)
+            # print(node1)
             node1 = parents[node1] if node1 != root else q
             node2 = parents[node2] if node2 != root else p
         return node1
@@ -139,4 +85,4 @@ if __name__ == '__main__':
     print(p)
     print(q)
     n = s.lowestCommonAncestor(tree_node, p=p, q=q)
-    print(n)
+    print(n.val)
