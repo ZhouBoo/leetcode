@@ -64,11 +64,3 @@ class Solution78: SolutionDelegate {
         print(self.subsets(nums))
     }
 }
-
-extension String {
-    init<B: FixedWidthInteger>(fullBinary value: B) {
-        self = value.words.reduce(into: "") {
-            $0.append(String($1, radix: 2))
-        }
-    }
-}
