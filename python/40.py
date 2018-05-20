@@ -31,6 +31,7 @@ class Solution():
 
 
     def generate(self, index, nums, results, temp, exists_set, sum, target):
+        nonlocal results
         """
         :type index: int
         :type nums: List[int]
@@ -51,6 +52,8 @@ class Solution():
         if new_sum == target and hash_num not in exists_set:
             results.append(temp)
             exists_set.add(hash_num)
+            # print(results)
+            print(len(results))
 
         self.generate(index + 1, nums, results, temp, exists_set, new_sum, target)
 
