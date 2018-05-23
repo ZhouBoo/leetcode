@@ -9,6 +9,8 @@
 import Foundation
 
 /**
+ **Easy**
+ 
  * **单词模式**
  * - pattern = "abba", str = "dog cat cat dog", 返回true
  * - pattern = "abba", str = "dog cat cat fish", 返回false.
