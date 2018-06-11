@@ -5,6 +5,7 @@ from list_2_node import list_2_node
 class Solution:
     
     def __init__(self, *args, **kwargs):
+        pass
 
     def flatten(self, root):
         """
@@ -46,7 +47,7 @@ nodes = list_2_node(lists)
 
 Solution().flatten(nodes)
 
-head = nodes
-while(head.right):
-    # print(nodes.val)
-    head = head.right
+# head = nodes
+# while(head.right):
+#     # print(nodes.val)
+#     head = head.right
