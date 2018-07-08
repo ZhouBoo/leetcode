@@ -16,11 +16,13 @@ class Solution:
         self.deep(root, tail_node)
 
     def deep(self, root, last):
+        print('tail_node = %d', last.value)
         if not root:
             return
 
         if (not root.left) and (not root.right):
             last = root
+            print('last.val = %d' % last.val)
             return
 
         left = root.left
