@@ -14,3 +14,28 @@
 # 输出: 12
 # 解释: 偷窃 1 号房屋 (金额 = 2), 偷窃 3 号房屋 (金额 = 9)，接着偷窃 5 号房屋 (金额 = 1)。
 #      偷窃到的最高金额 = 2 + 9 + 1 = 12 。
+
+
+class Solution:
+    def rob(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        length = len(nums)
+        if length <= 0:
+            return 0
+        elif length == 1:
+            return  nums[0]
+
+        robs = [nums[0], max(nums[1], nums[0])]
+        for idx in range(2, len(nums)):
+            rob = max(robs[idx - 1], robs[idx - 2] + nums[idx])
+            robs.append(rob)
+
+        print('robs = %s' % robs)
+        return robs[length - 1]
+
+
+nums = [2,7,9,13,1]
+print(Solution().rob(nums))
