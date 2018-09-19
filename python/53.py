@@ -39,7 +39,6 @@ class Solution:
                     tp_sum += num
 
         return current_max
-            
 
 nums = [-2,1,-3,4,-1,2,1,-5,4]
-print(Solution().maxSubArray(nums))          
+print(Solution().maxSubArray(nums))

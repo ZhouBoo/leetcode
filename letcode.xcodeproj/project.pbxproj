@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C7065FBF209AAFFF00585955 /* 49.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7065FBE209AAFFF00585955 /* 49.swift */; };
+		C7149C8D212C1EB900419869 /* QuickSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7149C8C212C1EB900419869 /* QuickSort.swift */; };
 		C714FB37209D619F00BDA142 /* 187.swift in Sources */ = {isa = PBXBuildFile; fileRef = C714FB36209D619F00BDA142 /* 187.swift */; };
 		C714FB39209DFAC400BDA142 /* 76-not.swift in Sources */ = {isa = PBXBuildFile; fileRef = C714FB38209DFAC400BDA142 /* 76-not.swift */; };
 		C714FB3D20A1376900BDA142 /* 455.swift in Sources */ = {isa = PBXBuildFile; fileRef = C714FB3C20A1376900BDA142 /* 455.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		C7065FBE209AAFFF00585955 /* 49.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 49.swift; sourceTree = "<group>"; };
+		C7149C8C212C1EB900419869 /* QuickSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickSort.swift; sourceTree = "<group>"; };
 		C714FB36209D619F00BDA142 /* 187.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 187.swift; sourceTree = "<group>"; };
 		C714FB38209DFAC400BDA142 /* 76-not.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "76-not.swift"; sourceTree = "<group>"; };
 		C714FB3C20A1376900BDA142 /* 455.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 455.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				D61D0C7E396CA7032452EFC8 /* 3.swift */,
+				C7149C8C212C1EB900419869 /* QuickSort.swift */,
 				C7EB77FA20B3FE680067608B /* 22.swift */,
 				C7AF351A206C89F0009EB355 /* 30.swift */,
 				C770EC5820AD27C300876AB6 /* 40.swift */,
@@ -209,6 +212,7 @@
 				C7FA7DD920BB898B00AA5647 /* 225.swift in Sources */,
 				C7EB77FB20B3FE680067608B /* 22.swift in Sources */,
 				C714FB4D20A57CEC00BDA142 /* 236.swift in Sources */,
+				C7149C8D212C1EB900419869 /* QuickSort.swift in Sources */,
 				C714FB4B20A545A900BDA142 /* 113.swift in Sources */,
 				C714FB3D20A1376900BDA142 /* 455.swift in Sources */,
 				C714FB3F20A13D1000BDA142 /* 376.swift in Sources */,
