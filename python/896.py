@@ -11,12 +11,12 @@ class Solution:
         direct_up = None
         last = None
         for i in A:
-            if last == None:
+            if not last:
                 last = i
                 continue
             else:
                 is_up = i > last
-                if direct_up == None:
+                if not direct_up:
                     if last != i:
                         direct_up = is_up
                     last = i
@@ -26,7 +26,6 @@ class Solution:
                 else:
                     return False
         return True
-            
 
 # A = [1,2,4,5]
 # A = [1,1,1]
