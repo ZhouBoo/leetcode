@@ -46,8 +46,8 @@ class Solution:
 
         return result
 
-name = "saeed"
-typed = "ssaaedd"
+# name = "saeed"
+# typed = "ssaaedd"
 
 # name = "alex"
 # typed = "aaleex"
@@ -70,7 +70,7 @@ typed = "ssaaedd"
 # name = "pyplrz"
 # typed = "ppyypllr" # False
 
-# name = "vtkgn"
-# typed = "vttkgnn" # True
+name = "vtkgn"
+typed = "vttkgnn" # True
 
 print(Solution().isLongPressedName(name, typed))
