@@ -14,27 +14,25 @@ class Solution:
         :type target: int
         :rtype: List[int]
         """
-        length = len(nums)
-        min_num = min(nums)
-    
-        # nums.sort()
-        for index_x in range(length):
-            if nums[index_x] + min_num > target:
-                continue
-            for index_y in range(index_x + 1, length):
-                # if nums[index_y] > target:
-                #     print('max index_x = %d, index_y = %d' % (index_x, index_y))
-                #     continue
-                sum = nums[index_x] + nums[index_y]
-                if sum == target:
-                    print('sum = %d, x = %d, y = %d' % (sum, nums[index_x], nums[index_y]))
-                    return [index_x, index_y]
-        
-        return [0, 0]
+        current_sets = set()
+        find_idx = None
+        find_caculator = None
+        for (idx, num) in enumerate(nums):
+            caculator = target - num
+            if num in current_sets:
+                find_idx = idx
+                find_caculator = caculator
+                break
+            else:
+                print('current set: %s' % current_sets)
+                current_sets.add(caculator)
+
+        if find_idx:
+            return [nums.index(find_caculator), find_idx]
 
 s = Solution()
-# nums = [2, 7, 11, 15, 123, 4, 5,12, 20, 187, 10, 98]
-# target = 108
-nums = [-3,4,3,90]
-target = 0
+nums = [2, 7, 11, 15, 123, 4, 5,12, 20, 187, 10, 98]
+target = 108
+# nums = [-3,4,3,90]
+# target = 0
 print(s.twoSum(nums, target))

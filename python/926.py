@@ -9,6 +9,8 @@ class Solution:
         :type S: str
         :rtype: int
         """
+
+
         
 
 # print(Solution().minFlipsMonoIncr("010110") == 2)
