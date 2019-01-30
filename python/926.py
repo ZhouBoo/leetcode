@@ -23,7 +23,6 @@ class Solution:
             temp_count += 1
             if not last_count:
                 last_count = 0
-                
             if idx + 1 >= length or s != fix_string[idx + 1]:
                 if not jump_next:
                     if last_count > temp_count:
@@ -34,7 +33,6 @@ class Solution:
                     if temp_count > last_count:
                         print('++ last -- last count = %d, current count = %d' % (last_count, temp_count))
                         change_count += last_count
-
                 else:
                     jump_next = False
 
