@@ -9,38 +9,53 @@ class Solution:
         :type S: str
         :rtype: int
         """
-        fix_string = '%d' % int(S)
-        print('begin ===> %s\n' % fix_string)
-        last_number = None
-        last_count = None
-        change_count = 0
-        temp_count = 0
-        change_count = 0
-        length = len(fix_string)
-        jump_next = False
+        # 此题用逻辑来分 很蠢！！！
+        # fix_string = '%d' % int(S)
+        # print('begin ===> %s\n' % fix_string)
+        # last_number = None
+        # last_count = None
+        # change_count = 0
+        # temp_count = 0
+        # change_count = 0
+        # length = len(fix_string)
+        # jump_next = False
 
-        for (idx, s) in enumerate(fix_string):
-            temp_count += 1
-            if not last_count:
-                last_count = 0
-            if idx + 1 >= length or s != fix_string[idx + 1]:
-                if not jump_next:
-                    if last_count > temp_count:
-                        print('++ current -- last count = %d, current count = %d' % (last_count, temp_count))
-                        change_count += temp_count
-                        jump_next = True
+        # for (idx, s) in enumerate(fix_string):
+        #     temp_count += 1
+        #     if not last_count:
+        #         last_count = 0
+        #     if idx + 1 >= length or s != fix_string[idx + 1]:
+        #         if not jump_next:
+        #             if last_count > temp_count:
+        #                 print('++ current -- last count = %d, current count = %d' % (last_count, temp_count))
+        #                 change_count += temp_count
+        #                 jump_next = True
 
-                    if temp_count > last_count:
-                        print('++ last -- last count = %d, current count = %d' % (last_count, temp_count))
-                        change_count += last_count
-                else:
-                    jump_next = False
+        #             if temp_count > last_count:
+        #                 print('++ last -- last count = %d, current count = %d' % (last_count, temp_count))
+        #                 change_count += last_count
+        #         else:
+        #             jump_next = False
 
-                last_count = temp_count
-                temp_count = 0
-                last_number = s
+        #         last_count = temp_count
+        #         temp_count = 0
+        #         last_number = s
 
-        return change_count
+        # 左边的 1 有多少
+        left_count = 0
+        # 右边的 0 有多少
+        right_count = S.count('0')
+
+        current_min = right_count
+
+        for (idx, s) in enumerate(S):
+            if s == '0':
+                right_count -= 1
+            else:
+                left_count  += 1
+            current_min = min(current_min, right_count + left_count)
+                
+        return current_min
 
 
 print(Solution().minFlipsMonoIncr("010110") == 2)
