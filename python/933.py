@@ -17,8 +17,6 @@ class RecentCounter:
         :type t: int
         :rtype: int
         """
-        
-        
 
 
 # Your RecentCounter object will be instantiated and called as such:
