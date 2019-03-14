@@ -9,37 +9,6 @@ class Solution:
         :type S: str
         :rtype: int
         """
-        # 此题用逻辑来分 很蠢！！！
-        # fix_string = '%d' % int(S)
-        # print('begin ===> %s\n' % fix_string)
-        # last_number = None
-        # last_count = None
-        # change_count = 0
-        # temp_count = 0
-        # change_count = 0
-        # length = len(fix_string)
-        # jump_next = False
-
-        # for (idx, s) in enumerate(fix_string):
-        #     temp_count += 1
-        #     if not last_count:
-        #         last_count = 0
-        #     if idx + 1 >= length or s != fix_string[idx + 1]:
-        #         if not jump_next:
-        #             if last_count > temp_count:
-        #                 print('++ current -- last count = %d, current count = %d' % (last_count, temp_count))
-        #                 change_count += temp_count
-        #                 jump_next = True
-
-        #             if temp_count > last_count:
-        #                 print('++ last -- last count = %d, current count = %d' % (last_count, temp_count))
-        #                 change_count += last_count
-        #         else:
-        #             jump_next = False
-
-        #         last_count = temp_count
-        #         temp_count = 0
-        #         last_number = s
 
         # 左边的 1 有多少
         left_count = 0

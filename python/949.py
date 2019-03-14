@@ -17,5 +17,19 @@ class Solution:
         :type A: List[int]
         :rtype: str
         """
+        # first_array = [0, 1, 2, 3]
+        # second_array = [0, 1, 2, 3, 4]
+        # third_array = [0, 1, 2, 3, 4, 5, 6]
+        # fourth_array = [0, ]
 
-        
+        # 其中只能有一个超过6的数
+        # 保证小时尽可能大
+        # 23：60 23：（12345）（0~9）
+
+        A.sort()
+        if A[2] >= 6:
+            return ''
+        return '1'
+
+
+print(Solution().largestTimeFromDigits([0,8,7,3]))
