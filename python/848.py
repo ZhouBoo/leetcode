@@ -1,6 +1,5 @@
 import time
 
-
 class Solution:
     
     def shiftingLetters(self, S, shifts):
