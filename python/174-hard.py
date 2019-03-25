@@ -23,8 +23,8 @@ class Solution:
         for r in range(len_row - 2, -1, -1):
             for c in range(len_col - 2, -1, -1):
                 dp[r][c] = max(1, min(dp[r + 1][c], dp[r][c + 1]) - dungeon[r][c])
-        # print(dp)
+        print(dp)
         return dp[0][0]
         
-# print(Solution().calculateMinimumHP([[-2,-3,3],[-5,-10,1],[10,30,-5]]))
-print(Solution().calculateMinimumHP([[0, 0]]))
+print(Solution().calculateMinimumHP([[-2,-3,3],[-5,-10,1],[10,30,-5]]))
+# print(Solution().calculateMinimumHP([[0, 0]]))
