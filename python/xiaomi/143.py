@@ -22,7 +22,8 @@ nums = None
 for line in sys.stdin:
     line = line.strip()
     if nums is None:
-        
+        nums = line.spi
+
 
 
 
