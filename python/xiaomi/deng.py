@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import re
 #匹配以chinahadoop开头的字符串
 result = re.match("chinahadoop","chinahadoop.cn")
@@ -33,3 +34,9 @@ c=Counter({'ham': 1, 'eggs': 2, 'apple': 1,'banana':-1})
 b=Counter({'orange':0})
 # print(b)
 print (c-b)
+=======
+from collections import Counter
+
+c = Counter(['eggs', 'ham', 'eggs', 'apple'])
+print(c)
+>>>>>>> ef176e08705dda978e879e494bb43a61b5b227e3
