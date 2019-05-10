@@ -60,9 +60,11 @@ def caculator(nums, groups, wash):
         
 
 
-    
-print(caculator([2, 5, 3], [1, 1, 2, 1, 3, 1], 4))
-        
+for line in sys.stdin:
+    line = line.strip()
+    if nums is None:
+        nums = line.spi
+
 
 
 
