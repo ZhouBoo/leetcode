@@ -7,25 +7,28 @@ import math
 
 class Solution:
     def pathInZigZagTree(self, label: int) -> [int]:
-
-        start = 0#2 ** n
-        end = 0#start + n - 1
-        level = 1
-        while True:
-            start = 2 ** (level - 1)
-            end = start * 2 - 1
-            print(start, end)
-            if start <= label and end >= label:
-                break
-            level += 1
+        level = 0
         l = label
+        while l > 0:
+            l = int(l / 2)
+            level += 1
+
+        start = 2 ** (level - 1)
+        end = start * 2 - 1
+        is_left = level % 2 == 0 
+        node_index = int((end - label if is_left else label - start) / 2)
         res = [label]
-        while level > 1:
-            is_left = level % 2 == 0 
+        level -= 1
+        while level > 0:
             start = 2 ** (level - 1)
             end = start * 2 - 1
-            tree_node = end - label if is_left else label - start
-            up_idx = math.ceil(tree_node) / 2.0
-            label = 
+            is_left = level % 2 == 0
+            num = end - node_index if is_left else start + node_index
+            res.insert(0, num)
+            node_index = int(node_index / 2)
+            level -= 1
+        return res
+
 
 print(Solution().pathInZigZagTree(14))
+print(Solution().pathInZigZagTree(26))
