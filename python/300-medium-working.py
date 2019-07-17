@@ -12,31 +12,44 @@
 # 进阶: 你能将算法的时间复杂度降低到 O(n log n) 吗?
 
 class Solution:
-    # def lengthOfLIS(self, nums) -> int:
-    #     length = len(nums)
-    #     for i in range(1, length):
-    #         for h in range(i+1, length):
-    #             if nums[h] > nums[i]:、
-    #     stop_index = 0
-    #     max_lengths = [1]
-        
-    #         if index == 0:
-    #             continue
-    #         else:
-    #             if value > nums[index - 1]:
-    #                 max_lengths.append(max_lengths[index - 1] + 1)
-    #             else:
-    #                 if value >= nums[stop_index]:
-    #                     max_lengths.append(max_lengths[index - 1])
-    #                 else:
-    #                     max_lengths.append(1)
-    #                     stop_index = index
-    #     print(max_lengths)
-    #     return max(max_lengths)
+    def lengthOfLIS(self, nums) -> int:
+        lis = []
+        for n in nums:
+            self._put2mid(lis, n)
+        return len(lis)
+
+    def _put2mid(self, nums, target):
+        last = len(nums) - 1
+        if last < 0 or nums[last] < target:
+            nums.append(target)
+        elif nums[0] > target:
+            nums[0] = target
+        else:
+            mid = 0
+            _left, _right = 0, last
+            while _left < _right:
+                mid = int((_right - _left) / 2) + _left
+                if nums[mid] > target:
+                    _left, _right = 0, mid
+                elif nums[mid] < target:
+                    _left, _right = mid + 1, _right    
+                else:
+                    return
+            if mid < len(nums) - 1:
+                nums[mid + 1] = target
+
+            
 
 
+
+
+print(Solution().lengthOfLIS([2]) == 1)
+print(Solution().lengthOfLIS([2, 2]) == 1)
+print(Solution().lengthOfLIS([1, 2]) == 2)
+print(Solution().lengthOfLIS([1, 2, 3, 6]) == 4)
+print(Solution().lengthOfLIS([2, 8, 9, 1, 3, 4, 5]) == 4)
 # print(Solution().lengthOfLIS([10,9,2,5,3,7,101,18]) == 4)
-print(Solution().lengthOfLIS([1,7,3,5,9,4,8]) == 4)
+# print(Solution().lengthOfLIS([1,7,3,5,9,4,8]) == 4)
 
                 
 
