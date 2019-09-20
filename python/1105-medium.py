@@ -27,11 +27,8 @@ class Solution:
         for book in books:
             if not levels:
                 levels.append([book])
-                max_height = book[1]
             else:
                 last_book = levels[-1][-1]
-                # 先当成最后一层，计算高度
-                max_height += book[1]
                 if last_book[0] + book[0] <= shelf_width:
                     # 把上个移到这边来看看高度
                     # 排除最后一个最大的数
@@ -43,13 +40,13 @@ class Solution:
 
                     if b + n > b_c + book[1]:
                         levels.append([book])
+                        max_height += b
                     else:
                         levels[-1] = books[-1][:-1]
                         levels.append([last_book, book])
-                    max_height                    
                     
-
                 else:
+                    max_height += reduce(lambda x, y: max(x, y[1]), books[-1], 0)
                     levels.append([book])
 
 # 把上一个最后的元素吸收过来，查看是否能减少最大高度
