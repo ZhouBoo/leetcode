@@ -19,10 +19,12 @@ class Solution:
         stack = []
         finish_index = -1
         removed = 0
+        # 遍历
         for index, c in enumerate(num):
+            # 检查是否已经移除了 k 个
             if removed >= k:
                 finish_index = index
-                break 
+                break
             int_c = int(c)
 
             if not stack:
@@ -55,7 +57,7 @@ class Solution:
 # print(Solution().removeKdigits(num = "9", k = 1) == '0')
 # print(Solution().removeKdigits(num = "112", k = 1) == '11')
 # print(Solution().removeKdigits(num = "10", k = 2) == '0')
-# print(Solution().removeKdigits(num = "1173", k = 2) == '11')
+# print(Solution().remogveKdigits(num = "1173", k = 2) == '11')
 # print(Solution().removeKdigits(num = "5337", k = 2) == '33')
 # print(Solution().removeKdigits(num = "12", k = 1) == '1')
 # print(Solution().removeKdigits(num = "10", k = 1) == '0')
