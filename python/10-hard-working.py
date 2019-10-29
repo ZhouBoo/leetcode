@@ -18,4 +18,8 @@
 
 class Solution:
     def isMatch(self, s: str, p: str) -> bool:
-        pass
+        if len(s) == 0 and len(p) == 0:
+            return True
+        return True
+
+    
