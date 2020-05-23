@@ -21,5 +21,3 @@ class Solution:
         if len(s) == 0 and len(p) == 0:
             return True
         return True
-
-    
