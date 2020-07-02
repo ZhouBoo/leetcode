@@ -49,20 +49,36 @@ class Solution:
 
 
 
-
-def quicksort(nums):
-    length = len(nums)
-    partial(nums, 0, length)
+def quicksort(nums, start, end):
+    if start >= end:
+        return
+    index = partial(nums, start, end)
+    quicksort(nums, start, index - 1)
+    quicksort(nums, index + 1, end)
+    return nums
 
 
 def partial(nums, start, end):
-    while start < end:
+    ## 左找到比 val 大  右找到比 val 小
+    e = end
+    val = nums[e]
+    while start < e:
+        if nums[start] <= val:
+            start += 1
+            continue
+        if nums[e] >= val:
+            e -= 1
+            continue
+        nums[e], nums[start] = nums[start], nums[e]
+        start += 1
+        e -= 1
+    nums[start], nums[end] = nums[end], nums[start]
+    return start
 
 
+a = [10,3,17,8,5,2,1,9,5,4]
 
-        
-
-
+print(quicksort(a, 0, len(a) - 1))
 
             
         

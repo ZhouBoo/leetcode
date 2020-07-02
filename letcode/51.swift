@@ -133,7 +133,7 @@ class Solution51: SolutionDelegate {
     }
     
     func runSolution() {
-        let n = 9
+        let n = 4
         let r = solveNQueens(n)
         printMap(map: r)
         

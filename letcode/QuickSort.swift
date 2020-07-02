@@ -21,9 +21,9 @@ func partition( data:inout [Int],low:Int,high:Int) -> Int {
         }
     }
     
-    if high != index {
+//    if high != index {
         data.swapAt(high, index)
-    }
+//    }
     return index
 }
 
